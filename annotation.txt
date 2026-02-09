@@ -2,3 +2,20 @@
 npx create-expo-app StickerSmash
 
 -About test 3:
+O Teste 3 é focado em Arquitetura de Navegação, Gerenciamento de Estado Global e Fluxos de Autenticação Protegidos.
+
+Em resumo, os pilares que cobrimos foram:
+
+* Arquitetura de Rotas Protegidas: Implementação de Navigation Guards utilizando Stack.Protected do Expo Router, garantindo que rotas sensíveis (Tabs) só sejam acessíveis com uma sessão ativa.
+* Gerenciamento de Estado Global (Context API): Criação de um SessionProvider para centralizar o estado de autenticação (session, isLoading) e as ações (signIn, signOut) em todo o app.
+* Persistência de Dados (Storage): Uso do hook customizado useStorageState integrado ao expo-secure-store, garantindo que o usuário permaneça logado mesmo após fechar e abrir o aplicativo.
+* Lógica Booleana e Coerção de Tipos:
+    * Double Bang (!!): Uso da dupla negação para converter strings de token em booleanos puros para os guards de navegação.
+    * Inversão de Guard (!): Lógica para proteger a tela de login, permitindo acesso apenas quando NÃO existe uma sessão ativa.
+* React 19 e Hooks Modernos: Utilização do novo hook use() para consumir contextos de forma mais flexível e performática, substituindo o antigo padrão de Consumer ou useContext.
+* UX de Autenticação:
+    * Redirecionamento Automático: Navegação instantânea baseada no estado da sessão, eliminando a necessidade de router.replace manuais e evitando o "pisca" de telas.
+    * StatusBar Dinâmica: Ajuste do estilo da barra de status (dark/light) para garantir visibilidade sobre diferentes fundos de tela (Login vs. Dashboard).
+* TypeScript e JSDoc: Documentação técnica de hooks e funções para garantir que a equipe entenda não apenas o que o código faz, mas o porquê das decisões arquiteturais (State vs. Actions).
+
+Em uma frase: O Teste 3 validou sua capacidade de estruturar a fundação de um aplicativo profissional, garantindo segurança no acesso aos dados e uma experiência de navegação fluida e persistente (essencial para a confiabilidade de sistemas ERP).
